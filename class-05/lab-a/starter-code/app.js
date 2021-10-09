@@ -94,7 +94,7 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(){ //eslint-disable-line
-
+  let returnvalue2=[];
   let sum4=sum(testArray[0],testArray[1]);
   console.log(sum4[0]);
   let sum5=sum(sum4[0],testArray[2]);
@@ -102,6 +102,11 @@ function sumArray(){ //eslint-disable-line
   let message5=`${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sum5[0]} is their sum.`;
   console.log(testArray);
   console.log(message5);
+
+  returnvalue2.push(sum5[0]);
+  returnvalue2.push(message5);
+  console.log(returnvalue2);
+  return returnvalue2;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -122,7 +127,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  let returnvalue3=[];
+  multArr=[2,3,4];
+  let product4=multiply(multArr[0],multArr[1]);
+  let product5=multiply(product4,multArr[2]);
+  console.log(product5);
 
+  let message6=`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${product5}.`
+
+  returnvalue3.push(sum3[0]);
+  returnvalue3.push(product3[0]);
+  returnvalue3.push(message3);
+  returnvalue3.push(message4);
+  console.log(returnvalue3);
+  return returnvalue3;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
