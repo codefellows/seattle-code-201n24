@@ -53,11 +53,30 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  let returnvalue=[];
 
+  let sum2=sum(a,b);
+  console.log(sum2[0]);
+  let sum3=sum(sum2[0],c);
+  console.log(sum3);
+
+  let product2=multiply(a,b);
+  console.log(product2[0]);
+  let product3=multiply(product2[0],c);
+  console.log(product3);
+  let message3=`${a} and ${b} and ${c} sum to ${sum3[0]}.`;
+  let message4=`The product of ${a} and ${b} and ${c} is ${product3[0]}.`;
+
+  returnvalue.push(sum3[0]);
+  returnvalue.push(product3[0]);
+  returnvalue.push(message3);
+  returnvalue.push(message4);
+  console.log(returnvalue);
+  return returnvalue;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -74,13 +93,20 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+function sumArray(){ //eslint-disable-line
 
+  let sum4=sum(testArray[0],testArray[1]);
+  console.log(sum4[0]);
+  let sum5=sum(sum4[0],testArray[2]);
+  console.log(sum5[0]);
+  let message5=`${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sum5[0]} is their sum.`;
+  console.log(testArray);
+  console.log(message5);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
