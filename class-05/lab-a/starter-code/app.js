@@ -29,14 +29,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-  let product = a*b;
+  let product = a * b;
   let message = `The product of ${a} and ${b} is ${product}.`;
   return [product, message];
 
 }
 
 // Here is the test for multiply(); uncomment it to run it
- testMultiply(5,9);
+testMultiply(5, 9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -53,14 +53,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  
-  let sumA = sum(a,b);
-  let sumB = sum(sumA[0],c);
+
+  let sumA = sum(a, b);
+  let sumB = sum(sumA[0], c);
   let sumC = sumB[0];
   //console.log(sumC);
-  let productA = multiply(a,b);
+  let productA = multiply(a, b);
   //console.log(productA)
-  let productB = multiply(productA[0],c);
+  let productB = multiply(productA[0], c);
   //console.log(productB[0])
   let productC = productB[0];
   //console.log(productC);
@@ -70,7 +70,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
 }
 //sumAndMultiply(3,4,5)
 // Here is the test for sumAndMultiply(); uncomment it to run it
- testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -117,16 +117,16 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
   let prodA = multiply(multArr[0], multArr[1])
-  
+
   let prodB = multiply(prodA[0], multArr[2])
   let prodC = prodB[0]
-  
+
   let text = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${prodC}.`
   return [prodC, text]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
- testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -147,13 +147,67 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+   let storedArray = dynamicArray
+   let ret = 0
+  //console.log(dynamicArray)
+  //first check if this is the last version
+  function runIt(dynamicArray) {
+    //dynamicArray.length
+    if (dynamicArray.length >= 2) {
+      // if it's not, recurse.
+      //get multiplication
+      //console.log('pow')
+      let mult = multiply(dynamicArray[0], dynamicArray[1])
+      let multAnswer = mult[0]
+      //we need to shorten dynamic Array
+      if (dynamicArray.length >= 2) {
+        //console.log('dynamicArray: ' + dynamicArray, 'dynamicArray.length: ' + dynamicArray.length)
+        let remainder = dynamicArray.slice(2)
+        let blankArray = []
+        dynamicArray = blankArray.concat(multAnswer, remainder)
+        //console.log('new dynamicArray: ' + dynamicArray)
+        runIt(dynamicArray)
+
+      }
+
+
+    } else if (dynamicArray.length < 2) {
+
+      //console.log('bang', dynamicArray[0])
+      ret = dynamicArray[0]
+
+    }
+    
+
+    
+
+    return ret
+  }
+
+  let r = 1;
+  let txtNum = storedArray[0] + ',';
+  do{
+    txtNum = txtNum + storedArray[r]
+    if (r !== storedArray.length - 1) {
+      txtNum += ','
+    }
+    r++
+  }while(r < storedArray.length);{
+
+  }
+
+
+  let theReturn = runIt(dynamicArray)
+  let txt = `The numbers ${txtNum} have a product of ${theReturn}.`
+  return [theReturn,txt]
 
 }
-
+//console.log(multiplyAnyArray(testDynamicArray))
+//console.log(multiplyAnyArray([1,2,3,4,5,6,7]))
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+ testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
