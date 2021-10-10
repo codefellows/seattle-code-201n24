@@ -16,7 +16,7 @@ function sum(a, b) {
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -38,7 +38,7 @@ function multiply(a, b) {
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -59,7 +59,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   let totalSum = sum(sumAb,c)[0];
   let productAb = multiply(a, b)[0]
   let product = multiply(productAb, c)[0]
-  console.log(totalSum);
+  // console.log(totalSum);
   
   return[totalSum, product, `${a} and ${b} and ${c} sum to ${totalSum}.`, `The product of ${a} and ${b} and ${c} is ${product}.`];
 
@@ -88,8 +88,9 @@ function sumArray(sumArr) { //eslint-disable-line
   sumArr = testArray;
   let sumOneTwo = sum(sumArr[0], sumArr[1])[0];
   let totalSumTwo = sum(sumOneTwo, sumArr[2])[0];
+  // console.log(sumOneTwo);
   return[totalSumTwo, `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${totalSumTwo} is their sum.`];
-  console.log(sumOneTwo)
+  
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -110,11 +111,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+  multArr = testArray;
+  let prodOneTwo = multiply(multArr[0], multArr[1])[0];
+  let totalProd = multiply(prodOneTwo, multArr[2])[0];
+  return[totalProd, `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${totalProd}.`]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
