@@ -1,6 +1,6 @@
 'use strict';
 /////////////////////////////////////
-let push;
+
 /* Problem 1 (this is your demo that we'll solve in class)
 Write a function called sum() that takes in two numbers as arguments and then returns an array where the first element is the sum of those numbers, and the second element is a concatenated string that EXACTLY follows this example and uses the values that were input into the function:
 
@@ -109,11 +109,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
-  //eslint-disable-line
+  let totalOne = multiply(multArr[0], multArr[1])[0];
+  let totalTwo = multiply(totalOne, multArr[2])[0];
+  let message = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${totalTwo}.`;
+  return [totalTwo, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
