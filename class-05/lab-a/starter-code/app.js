@@ -127,15 +127,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  let returnvalue3=[];
   multArr=[2,3,4];
+  let returnvalue3=[];
+
   let product4=multiply(multArr[0],multArr[1]);
   let product5=multiply(product4[0],multArr[2]);
   console.log(product5[0]);
-
   let message6=`The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${product5[0]}.`;
   console.log(message6);
-
   returnvalue3.push(product5[0]);
   returnvalue3.push(message6);
   console.log(returnvalue3);
