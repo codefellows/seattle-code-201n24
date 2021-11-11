@@ -7,8 +7,11 @@ const Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
-  // TODO: Fill in this instance method to create a new CartItem and add it to this.items
-  console.log(product, quantity);
+  // DONE: Fill in this instance method to create a new CartItem and add it to this.items
+  let newCartItem = new CartItem(product, quantity);
+  this.items.push(newCartItem);
+  //this.items.push(new CartItem(product, quantity));
+  console.log(this.items);
 };
 
 Cart.prototype.saveToLocalStorage = function() {

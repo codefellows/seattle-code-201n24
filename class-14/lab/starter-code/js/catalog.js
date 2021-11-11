@@ -47,13 +47,18 @@ function addSelectedItemToCart() {
   cart.addItem(itemPicked, quantityPicked);
 }
 
-// TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+// DONE: Update the cart count in the header nav with the number of items in the Cart
+function updateCounter() {
+  document.getElementById('itemCount').textContent = `${cart.items.length} item(s)`;
+}
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   // TODO: Get the item and quantity from the form
-  // TODO: Add a new element to the cartContents div with that information
+  // same as above
+  // TODO: Add a new element to the "cartContents" (ID) div on index.html with that information
+  // Get a window into the DOM
+  // create element, give it context, append it to the parrent (parent is our window into the DOM)
 }
 
 // Set up the "submit" event listener on the form.
@@ -65,3 +70,7 @@ catalogForm.addEventListener('submit', handleSubmit);
 // Before anything else of value can happen, we need to fill in the select
 // drop down list in the form.
 populateForm();
+
+// tbody
+// .innerHTML = '';
+
